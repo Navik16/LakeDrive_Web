@@ -1,0 +1,515 @@
+/* General Page Styling */
+html, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #001f3f;
+    color: white;
+    width: 100%;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+
+/* Navigation Bar */
+
+nav {
+    position: fixed;  /* Keeps navbar fixed at the top */
+    top: 0;           /* Aligns it to the top */
+    left: 0;          /* Aligns it to the left */
+    width: 100%;      /* Makes it span across the screen */
+    background-color: #2c3e50; /* Keeps the background color */
+    padding: 1rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensures navbar is always on top */
+    height: 50px;
+}
+
+/* Add space to body so content doesn't hide under navbar */
+body {
+    padding-top: 80px; /* Adjust this based on navbar height */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: -60px; /* Adjust this value to move the links left */
+}
+
+.nav-links li {
+    margin-right: 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Home button styling */
+.home-button {
+    position: relative;       /* Positions the button relative to the navigation bar */
+    border-radius: 5px;       /* Rounded corners */
+    cursor: pointer;         /* Shows a pointer cursor */
+    transition: background 0.3s ease; /* Smooth hover effect */
+    display: none;            /* Hide by default */
+    height :35px;
+    width: 35px;
+    margin-right: 15px;
+}
+
+
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 50px;
+}
+
+
+/* Title Section */
+.hero {
+    text-align: center;
+    padding: 6rem 2rem 5rem;
+    background: url('res8.jpg') center/cover no-repeat;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+    margin: 0;
+    max-width: 100%;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    
+}
+
+/* Boat Options */
+#boat-options {
+    padding: 3rem 2rem;
+}
+
+.boat-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.boat-item {
+    background: #3a5f8f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 250px;
+}
+
+.boat-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.boat-item h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.boat-item p {
+    font-size: 1rem;
+}
+
+
+
+/* Restaurant Images */
+.gallery {
+    padding-top: 10px; /* Reduce space above gallery */
+    padding-bottom: 1000px; /* Adjust this value to increase space */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Center and make heading take full width */
+.gallery h2 {
+    width: 100%;
+    text-align: center; 
+    font-size: 2rem; /* Adjust size if needed */
+    margin-bottom: 20px; /* Space between heading and images */
+}
+
+
+.gallery-container {
+    display: flex; /* Makes images appear in a row */
+    justify-content: center; /* Centers the images */
+    gap: 15px; /* Adds spacing between images */
+    flex-wrap: wrap; /* Allows images to wrap on smaller screens */
+    overflow: hidden;
+}
+.gallery-container img {
+    width: 150px; /* Controls image size */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Adds rounded corners */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05); /* Slightly enlarges images when hovered */
+}
+
+/* Lightbox Overlay */
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Lightbox Image */
+.lightbox-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    user-select: none;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots Container */
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Dots Style */
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Active Dot */
+.dot.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+
+
+/* Ensure Lightbox is centered */
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Lightbox Image */
+.lightbox-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    user-select: none;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots Container */
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Dots Style */
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Active Dot */
+.dot.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+
+
+
+/* Contact Section */
+#contact {
+    padding-top: 0px;
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+
+form {
+    background: #3a5f8f;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #e67e22;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #cf6d17;
+}
+
+/* Contact Info */
+.contact-info {
+    text-align: left;
+    max-width: 400px;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.map-link {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c3e50;
+    color: white;
+    width: 100vw;
+    max-width: 100%;
+    margin-top: 3rem;
+}
+
+
+/* Responsive Adjustments for Smaller Screens */
+@media screen and (max-width: 768px) {
+    
+    /* Hide navigation buttons on small screens */
+
+    nav {
+        height: 40px; /* Adjusted height for small screens */
+      }
+ 
+    .nav-links { 
+        display: none; /* Hides the navigation buttons */
+    }
+
+    .home-button {
+        display: block; /* Show button on small screens */
+    }
+
+
+    /* Hover effect for the home button */
+    .home-button:hover {
+        background: rgba(0, 0, 0, 0.6); /* Darker background on hover */
+    }
+
+    .home-button img {
+        width: 80%; /* Adjust the size of the home icon inside the button */
+        height: auto;
+    }
+    
+    /* Hero Section Adjustments */
+    .hero {
+        height: 25vh;
+        background-size: cover; /* Prevent cropping */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 90%;
+        padding: 0.5rem;
+        margin-right: 45px;
+    }
+    .hero h2 {
+        font-size: 1.5rem; /* Reduce heading size */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Reduce paragraph size */
+    }
+
+
+
+    /* Lightbox Responsive Fix */
+    .lightbox-content {
+        width: 90%;
+        height: auto;
+    }
+
+    /* Contact Form Adjustments */
+    form {
+        width: 90%;
+    }
+
+    /* Resize Buttons & Text */
+    .btn, .menu-button, .event-button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
